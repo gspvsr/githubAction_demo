@@ -1,0 +1,17 @@
+name: Testing fowrkflow variables
+
+on:
+  workflow_dispath:
+
+env:
+  cloud: aws-cloud
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+      steps:
+        - name: "Say-Hello Mona It's Monday"
+          run: echo "$Greeting $First_name is using $cloud"
+          env:
+            first_Name: vishal
